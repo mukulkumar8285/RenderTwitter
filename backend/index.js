@@ -25,7 +25,7 @@ const app = express();
 const PORT =  process.env.PORT;
 const __dirname = path.resolve(); // 2 step we do
 
-const allowedOrigins = ["http://localhost:3000", "http://localhost:8080"];
+const allowedOrigins = ["https://rendertwitter.onrender.com", "http://localhost:8080"];
 
 app.use(cors({
 	origin: (origin, callback) => {
