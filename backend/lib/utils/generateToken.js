@@ -16,3 +16,4 @@ export const generateTokenAndSetCookie = (userId, res) => {
 		path: "/", // Ensure this matches when clearing the cookie
 	});
 };
+//

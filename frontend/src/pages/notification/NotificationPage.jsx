@@ -14,7 +14,7 @@ const NotificationPage = () => {
 		queryKey: ["notifications"],
 		queryFn: async () => {
 			try {
-				const res = await fetch("http://localhost:8080/api/notifications" , {
+				const res = await fetch(`${process.env.BACKEND_API_URL}/api/notifications`, {
 					credentials : "include"
 				});
 				const data = await res.json();
@@ -29,7 +29,7 @@ const NotificationPage = () => {
 	const { mutate: deleteNotifications } = useMutation({
 		mutationFn: async () => {
 			try {
-				const res = await fetch("http://localhost:8080/api/notifications", {
+				const res = await fetch(`${process.env.BACKEND_API_URL}/api/notifications`, {
 					method: "DELETE",
 					credentials:"include"
 				});
