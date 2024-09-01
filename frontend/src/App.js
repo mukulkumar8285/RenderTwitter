@@ -20,7 +20,7 @@ function App() {
     const { data: authUser, isLoading } = useQuery({
         queryKey: ["authUser"],
         queryFn: async () => {
-            const res = await fetch(`${process.env.BACKEND_API_URL}/api/auth/me`, {
+            const res = await fetch(`${process.env.REACT_APP_BACKEND_API_URL}/api/auth/me`, {
                 credentials: "include",
             });
             const data = await res.json();

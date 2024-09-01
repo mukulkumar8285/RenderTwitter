@@ -25,7 +25,7 @@ const SignUpPage = () => {
 	const { mutate, isError, isPending, error } = useMutation({
 		mutationFn: async ({ email, username, fullName, password }) => {
 			try {
-				const res = await fetch(`${process.env.BACKEND_API_URL}/api/auth/signup`, {
+				const res = await fetch(`${process.env.REACT_APP_BACKEND_API_URL}/api/auth/signup`, {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json",

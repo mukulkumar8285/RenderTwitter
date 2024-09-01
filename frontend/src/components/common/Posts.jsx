@@ -7,15 +7,15 @@ const Posts = ({ feedType, username, userId }) => {
 	const getPostEndpoint = () => {
 		switch (feedType) {
 			case "forYou":
-				return `${process.env.BACKEND_API_URL}/api/posts/all`;
+				return `${process.env.REACT_APP_BACKEND_API_URL}/api/posts/all`;
 			case "following":
-				return `${process.env.BACKEND_API_URL}/api/posts/following`;
+				return `${process.env.REACT_APP_BACKEND_API_URL}/api/posts/following`;
 			case "posts":
-				return `${process.env.BACKEND_API_URL}/api/posts/user/${username}`;
+				return `${process.env.REACT_APP_BACKEND_API_URL}/api/posts/user/${username}`;
 			case "likes":
-				return `${process.env.BACKEND_API_URL}/api/posts/likes/${userId}`;
+				return `${process.env.REACT_APP_BACKEND_API_URL}/api/posts/likes/${userId}`;
 			default:
-				return `${process.env.BACKEND_API_URL}/api/posts/all`;
+				return `${process.env.REACT_APP_BACKEND_API_URL}/api/posts/all`;
 		}
 	};
 

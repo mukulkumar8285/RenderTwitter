@@ -21,7 +21,7 @@ const CreatePost = () => {
 	} = useMutation({
 		mutationFn: async ({ text, img }) => {
 			try {
-				const res = await fetch(`${process.env.BACKEND_API_URL}/api/posts/create`, {
+				const res = await fetch(`${process.env.REACT_APP_BACKEND_API_URL}/api/posts/create`, {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json",
