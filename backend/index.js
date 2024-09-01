@@ -25,10 +25,19 @@ const app = express();
 const PORT =  process.env.PORT;
 const __dirname = path.resolve(); // 2 step we do
 
+const allowedOrigins = ["http://localhost:3000", "http://localhost:8080"];
+
 app.use(cors({
-	origin: ["http://localhost:3000" , "http://localhost:8080"],
+	origin: (origin, callback) => {
+		if (allowedOrigins.includes(origin) || !origin) { // Allow requests with no origin (e.g., Postman)
+			callback(null, true);
+		} else {
+			callback(new Error('Not allowed by CORS'));
+		}
+	},
 	credentials: true,
-}))
+}));
+
 app.use(express.json({ limit: "5mb" })); // to parse req.body
 // limit shouldn't be too high to prevent DOS
 app.use(express.urlencoded({ extended: true })); // to parse form data(urlencoded)
