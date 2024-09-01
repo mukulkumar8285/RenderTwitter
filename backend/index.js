@@ -26,7 +26,7 @@ const PORT =  process.env.PORT;
 const __dirname = path.resolve(); // 2 step we do
 
 app.use(cors({
-	origin: true,
+	origin: ["http://localhost:3000" , "http://localhost:8080"],
 	credentials: true,
 }))
 app.use(express.json({ limit: "5mb" })); // to parse req.body
