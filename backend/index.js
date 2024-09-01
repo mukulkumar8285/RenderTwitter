@@ -22,8 +22,8 @@ cloudinary.config({
 });
 
 const app = express();
-const PORT = process.env.PORT || 5000;
-const __dirname = path.resolve();
+const PORT =  process.env.PORT;
+const __dirname = path.resolve(); // 2 step we do
 
 app.use(cors({
 	origin: ['http://localhost:3000', 'http://localhost:3001'],
@@ -41,10 +41,10 @@ app.use("/api/posts", postRoutes);
 app.use("/api/notifications", notificationRoutes);
 
 if (process.env.NODE_ENV === "production") {
-	app.use(express.static(path.join(__dirname, "/frontend/dist")));
+	app.use(express.static(path.join(__dirname, "/frontend/build"))); // step three build location
 
 	app.get("*", (req, res) => {
-		res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+		res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html")); // step three build location
 	});
 }
 

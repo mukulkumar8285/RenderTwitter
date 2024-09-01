@@ -1,0 +1,2 @@
+//add build in backend package.json 
+// const __dirname = path.resolve(); // 2 step we do index.js
